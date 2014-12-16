@@ -1,0 +1,27 @@
+extends ./base.jade
+block append style
+    link(href="/assets/style.css", rel="stylesheet",type="text/css")
+block body
+    section#wrapper
+        section#content
+            h1 Don't have an account? Sign Up here!
+            p#message
+            section#signUp
+              form#signupForm(class="mainForm", name="signupForm", action="/signup", method="POST")
+                | Username:
+                input#user(type="text", name="username", placeholder="username")
+                br
+                | Password :
+                input#pass(type="password", name="password", placeholder="password")
+                br
+                | Confirm Password:
+                input#pass2(type="password", name="password2", placeholder="confirm password")
+                br
+                a#signupSubmit(class="formSubmit", href="#") Sign up
+            nav#nav
+              ul
+                li Have an account? go back to 
+                a(href="/login") Login
+                  
+block scripts
+        script(src="/assets/client.js")

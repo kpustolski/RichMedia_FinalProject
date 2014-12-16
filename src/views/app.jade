@@ -1,0 +1,41 @@
+extends ./base.jade
+block append style
+    link(href="/assets/style.css", rel="stylesheet",type="text/css")
+    link(href="/assets/colorPicker/css/colpick.css", rel="stylesheet",type="text/css")
+block body
+    div.tools
+        ul#toolSet1
+            li
+                div#chat
+                    ul
+                        li
+                            textarea#chatBox(rows="25", cols="1", readonly)
+                        li
+                            div#messageBox
+                                input#messageChat(name="message",type="text")
+                                input#sendBtn(type="button",value="send")
+            li#slider
+                div#lineWidthSlider
+                | Brush Size:
+                input#lineWidthNum(type="text", readonly)
+        ul#toolSet2
+            li
+                div.color-box
+            li
+                img#eraserBtn(src="/assets/img/eraserIcon.png" alt="...")
+            li
+                img#penBtn(src = "/assets/img/brushIcon.png") 
+            li
+                button#clearCanvasBtn(type='button')  Clear Canvas
+            li
+                button#exportCanvasBtn(type='button')  Export Canvas
+        
+    nav#logout
+        a(href="/logout") Logout
+    div
+    canvas#mainCanvas
+block scripts
+    script(src="/assets/colorPicker/js/colpick.js" type="text/javascript")
+    script(src="/socket.io/socket.io.js")
+    script(src="/assets/app.js")
+
