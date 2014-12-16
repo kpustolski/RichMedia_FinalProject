@@ -18,7 +18,8 @@ var url = require('url');
 var fs = require('fs');
 
 // connect mongoose
-var dbURL = process.env.MONGOLAB_URI || "mongodb://localhost/MVCproject";
+var dbURL = process.env.MONGOHQ_URL || "mongodb://localhost/MVCproject";
+
 
 var db = mongoose.connect(dbURL,function(err){
 
